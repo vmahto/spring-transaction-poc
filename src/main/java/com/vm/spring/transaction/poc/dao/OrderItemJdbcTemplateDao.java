@@ -62,7 +62,7 @@ public class OrderItemJdbcTemplateDao implements Dao<OrderItem> {
 		 * Object[]{id}, (resultSet, i) -> { return toOrderItem(resultSet); });
 		 */
 
-		List<OrderItem> persons = jdbcTemplate.query(
+		List<OrderItem> orders = jdbcTemplate.query(
 				"select * from Person where id =?", new Object[] { id },
 				new RowMapper<OrderItem>() {
 
@@ -74,8 +74,8 @@ public class OrderItemJdbcTemplateDao implements Dao<OrderItem> {
 					}
 				});
 
-		if (persons.size() == 1) {
-			return persons.get(0);
+		if (orders.size() == 1) {
+			return orders.get(0);
 		}
 		throw new RuntimeException("No item found for id: " + id);
 	}

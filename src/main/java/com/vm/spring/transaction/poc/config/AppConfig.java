@@ -12,7 +12,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "com.vm.spring.transaction.poc")
 @EnableTransactionManagement
 public class AppConfig {
 

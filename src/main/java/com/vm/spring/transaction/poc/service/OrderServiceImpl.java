@@ -10,13 +10,14 @@ import com.vm.spring.transaction.poc.exception.InvalidOrderItemException;
 import com.vm.spring.transaction.poc.model.OrderItem;
 
 @Service
+@Transactional
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private Dao<OrderItem> dao;
 
     @Override
-    @Transactional(rollbackFor = InvalidOrderItemException.class)
+//    @Transactional(rollbackFor = InvalidOrderItemException.class)
     public void persistOrders(List<OrderItem> orderItems) throws InvalidOrderItemException {
         for (OrderItem orderItem : orderItems) {
             if (orderItem.getQty() > 100) {
