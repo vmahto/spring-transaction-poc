@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vm.spring.transaction.poc.exception.InvalidOrderItemException;
 import com.vm.spring.transaction.poc.model.OrderItem;
 
-@Transactional
+//@Transactional
 public interface OrderService {
 
     void persistOrders(List<OrderItem> orderItems) throws InvalidOrderItemException;
